@@ -1,236 +1,194 @@
-/* RESET */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY & GLOBALS */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #fffafc, #ffe6f0);
-  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #fff0f5, #f0fff0);
+  color: #222;
   line-height: 1.6;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-/* CONTAINER */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* HEADER */
+/* Header */
 header {
-  background: linear-gradient(to right, #fbc2eb, #f59eb1);
+  background: linear-gradient(to right, #f8e1f4, #d2f8e1);
   padding: 20px 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-style: italic;
-  animation: jiggle 0.8s ease-in-out;
-  display: inline-block;
+  animation: jiggle 0.6s ease-in-out;
+  background: linear-gradient(to right, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  cursor: pointer;
 }
 
 @keyframes jiggle {
-  0% { transform: rotate(0deg); }
+  0%, 100% { transform: rotate(0deg); }
   25% { transform: rotate(2deg); }
   50% { transform: rotate(-2deg); }
-  75% { transform: rotate(1deg); }
-  100% { transform: rotate(0deg); }
-}
-
-nav {
-  margin-top: 10px;
+  75% { transform: rotate(2deg); }
 }
 
 .nav-links {
+  list-style: none;
   display: flex;
   gap: 20px;
+  justify-content: flex-end;
 }
 
-.nav-links li a {
-  padding: 8px 15px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  transition: background 0.3s ease;
-}
-
-.nav-links li a:hover,
-.nav-links .active {
-  background: #fff;
-  color: #e91e63;
-}
-
-/* HERO SECTION (Home) */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #fbc2eb, #f59eb1);
-  color: white;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto 25px;
-}
-
-.hero .btn-primary {
-  background: linear-gradient(to right, #f59eb1, #fbc2eb);
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 30px;
+.nav-links a {
+  text-decoration: none;
+  color: #333;
   font-weight: bold;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: #ff6ec4;
+}
+
+/* Main Sections */
+main.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+main.contact > h2,
+main.contact > p {
+  flex: 1;
+}
+
+/* Contact Form */
+form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(to right, #ff6ec4, #7873f5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 25px;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.3s ease;
-  margin-top: 20px;
-  position: static;
+  margin-top: 15px;
 }
 
 .btn-primary:hover {
-  transform: scale(1.05);
-  background: linear-gradient(to right, #fbc2eb, #f59eb1);
+  transform: translateY(-2px);
+  background: linear-gradient(to right, #7873f5, #ff6ec4);
 }
 
-/* BLOG SECTION */
-.blog-container {
-  padding: 60px 20px;
-  background: #fffafc;
-}
-
-.blog-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  margin-bottom: 30px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.blog-card:hover {
-  transform: translateY(-5px);
-}
-
-.blog-card h3 {
-  margin-bottom: 10px;
-  color: #e91e63;
-}
-
-.blog-card .btn-primary {
-  display: inline-block;
-  margin-top: 10px;
-}
-
-/* PRODUCTS PAGE */
-.product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  padding: 60px 20px;
-}
-
-.product-card {
-  flex: 1 1 calc(33.33% - 20px);
+/* Cards / Products */
+.card, .product-card {
   background: white;
-  border-radius: 15px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
 }
 
-.product-card:hover {
+.card:hover, .product-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.product-card img {
-  max-width: 100%;
+.card img, .product-card img {
+  width: 100%;
+  display: block;
   border-radius: 10px;
-  margin-bottom: 15px;
 }
 
-.product-card h4 {
-  color: #e91e63;
+.card-body {
+  padding: 15px;
+}
+
+.card-body h4 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(to right, #d2f8e1, #f8e1f4);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Blog Section */
+.blog-post {
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-left: 5px solid #ff6ec4;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+  cursor: pointer;
+}
+
+.blog-post:hover {
+  border-color: #7873f5;
+}
+
+.blog-post h3 {
   margin-bottom: 10px;
 }
 
-/* CONTACT + ABOUT */
-main.contact {
-  display: flex;
-  gap: 50px;
-  padding: 60px 20px;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
+/* Responsive */
+@media (max-width: 768px) {
+  main.contact {
+    flex-direction: column;
+  }
 
-main.contact > p,
-main.contact > h2 {
-  flex: 1 1 40%;
-  max-width: 500px;
-}
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-end;
+  }
 
-#contactForm {
-  flex: 1 1 50%;
-  background: #fff;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
+  .logo {
+    font-size: 2rem;
+  }
 
-#contactForm input,
-#contactForm textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-}
-
-#contactForm label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-#contactForm button {
-  width: 100%;
-}
-
-/* FOOTER */
-footer {
-  background: linear-gradient(to right, #fbc2eb, #f59eb1);
-  text-align: center;
-  padding: 20px;
-  margin-top: 60px;
-}
-
-.footer-content p {
-  color: white;
-}
-
-/* RESPONSIVE */
-@media screen and (max-width: 768px) {
   .product-card {
     flex: 1 1 100%;
   }
@@ -239,17 +197,75 @@ footer {
     justify-content: center;
   }
 
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  main.contact {
-    flex-direction: column;
-  }
-
-  .blog-card,
-  #contactForm {
+  .blog-post, #contactForm {
     width: 100%;
   }
+}
+
+@media (max-width: 414px) {
+  .btn-primary {
+    width: 100%;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+  }
+}
+
+/* Form Message */
+.form-message {
+  margin-top: 10px;
+  color: green;
+}
+
+
+/* === SPECIFIC BUG FIXES BELOW === */
+
+/* 1. Home page 'Shop Our Favourites' button pushed down */
+.hero .btn-primary {
+  margin-top: 20px !important; /* push it below text */
+  position: static !important;  /* ensure no absolute or floating */
+}
+
+/* 2. Blog page 'Shop Now' button styled exactly like home page */
+.blog-post .btn-primary {
+  background: linear-gradient(to right, #ff6ec4, #7873f5) !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  border-radius: 25px !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  transition: transform 0.2s ease, background 0.3s ease !important;
+  display: inline-block !important;
+  margin-top: 15px !important;
+  position: static !important;
+}
+
+.blog-post .btn-primary:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(to right, #7873f5, #ff6ec4) !important;
+}
+
+/* 3. Products page layout fixed: side-by-side product cards */
+.product-list, 
+.product-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+  justify-content: space-between !important;
+  padding: 40px 0 !important;
+}
+
+.product-card {
+  flex: 1 1 calc(33.33% - 20px) !important;
+  max-width: calc(33.33% - 20px) !important;
+  margin-bottom: 20px !important;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1) !important;
+  transition: transform 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.product-card:hover {
+  transform: translateY(-5px) !important;
 }
