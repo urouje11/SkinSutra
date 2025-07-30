@@ -50,14 +50,14 @@ header {
 }
 main.contact {
   display: flex;
-  gap: 40px;           
+  gap: 40px;
   align-items: flex-start;
-  flex-wrap: wrap;     
+  flex-wrap: wrap; /* so on small screens it stacks */
 }
 
-main.contact > * {
-  flex: 1 1 45%;       
-  min-width: 300px;    
+main.contact > section {
+  flex: 1 1 45%;
+  min-width: 300px;
 }
 
 nav {
