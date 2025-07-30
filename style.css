@@ -48,6 +48,17 @@ header {
   animation: jiggle 0.6s ease-in-out;
 
 }
+main.contact {
+  display: flex;
+  gap: 40px;           /* space between the two sections */
+  align-items: flex-start;
+  flex-wrap: wrap;     /* so it stacks on small screens */
+}
+
+main.contact > * {
+  flex: 1 1 45%;       /* each takes about 45% width, flexible */
+  min-width: 300px;    /* minimum width before stacking */
+}
 
 nav {
   float: right;
