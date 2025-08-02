@@ -73,7 +73,6 @@ header::after {
   clear: both;
 }
 
-/* Buttons */
 .btn-primary,
 .btn-secondary,
 form button {
@@ -113,7 +112,6 @@ form button {
   color: #fff;
 }
 
-/* Hero */
 .hero {
   margin: 50px 0;
   text-align: center;
@@ -139,7 +137,7 @@ form button {
   color: #5a3d31;
 }
 
-/* Featured blogs */
+
 .featured-blogs ul {
   list-style: disc inside;
   margin-top: 15px;
@@ -154,7 +152,7 @@ form button {
   margin-bottom: 15px;
 }
 
-/* Blog posts */
+
 .blog-post {
   margin-bottom: 40px;
   padding-bottom: 20px;
@@ -166,7 +164,7 @@ form button {
   margin-bottom: 10px;
 }
 
-/* Contact Page Layout */
+
 main.contact {
   display: flex;
   gap: 40px;
@@ -179,13 +177,13 @@ main.contact > section {
   min-width: 300px;
 }
 
-/* Ensure headings have spacing */
+
 .contact-section h3,
 .about-section h2 {
   margin-bottom: 20px;
 }
 
-/* Contact Form */
+
 form {
   max-width: 500px;
   margin-top: 20px;
