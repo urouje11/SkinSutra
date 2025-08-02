@@ -248,12 +248,13 @@ form button:hover {
 .contactush3{
   font-weight: bolder;
   font-family:'Courier New', Courier, monospace;
-  font-size: 45px;
+  font-size: 25px;
 }
 .aboutush2{
   font-weight: bolder;
   font-family:'Courier New', Courier, monospace;
   font-size: 45px;
+  margin-left: 25px;
 }
 .product-list {
   display: grid;
