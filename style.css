@@ -223,8 +223,8 @@ form button {
   font-weight: 700;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
-.contactform1{
-  margin-right: 100px;
+.aboutus{
+  margin-right: 300px;
 }
 form button:hover {
   background: linear-gradient(45deg, #8d5c45, #6a4a3c);
