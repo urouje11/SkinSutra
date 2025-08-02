@@ -14,7 +14,6 @@
 .logo {
   font-style: italic;
   animation: jiggle 0.6s ease-in-out;
-  /* other styles like gradient text can be here */
 }
 
 body {
@@ -23,14 +22,12 @@ body {
   color: #333;
 }
 
-/* Layout container */
 .container {
   width: 90%;
   max-width: 1100px;
   margin: auto;
 }
 
-/* Header */
 header {
   background: linear-gradient(to right, #6a4a3c, #8d5c45);
   border-bottom: 2px solid #573b2c;
@@ -43,20 +40,6 @@ header {
   float: left;
   font-size: 2.4rem;
   font-weight: 900;
-   font-style: italic;
-  animation: jiggle 0.6s ease-in-out;
-
-}
-main.contact {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  flex-wrap: wrap; /* so on small screens it stacks */
-}
-
-main.contact > section {
-  flex: 1 1 45%;
-  min-width: 300px;
 }
 
 nav {
@@ -84,7 +67,6 @@ nav {
   color: #6a4a3c;
 }
 
-/* Clear floats */
 header::after {
   content: "";
   display: table;
@@ -181,6 +163,25 @@ form button {
   margin-bottom: 10px;
 }
 
+/* Contact Page Layout */
+main.contact {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+main.contact > section {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+/* Ensure headings have spacing */
+.contact-section h3,
+.about-section h2 {
+  margin-bottom: 20px;
+}
+
 /* Contact Form */
 form {
   max-width: 500px;
@@ -223,9 +224,7 @@ form button {
   font-weight: 700;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
-.aboutus{
-  margin-right: 300px;
-}
+
 form button:hover {
   background: linear-gradient(45deg, #8d5c45, #6a4a3c);
   box-shadow: 0 10px 20px rgba(106, 74, 60, 0.6);
@@ -290,7 +289,7 @@ footer {
   font-size: 0.95rem;
 }
 
-/* Responsive */
+/* Responsive Navigation */
 @media (max-width: 768px) {
   .nav-links {
     flex-direction: column;
