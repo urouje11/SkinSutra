@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 @keyframes jiggle {
   0%, 100% { transform: rotate(0deg); }
   25% { transform: rotate(2deg); }
@@ -15,7 +16,6 @@
 .logo {
   font-style: italic;
   animation: jiggle 0.6s ease-in-out;
-  /* other styles like gradient text can be here */
 }
 
 body {
@@ -44,20 +44,8 @@ header {
   float: left;
   font-size: 2.4rem;
   font-weight: 900;
-   font-style: italic;
+  font-style: italic;
   animation: jiggle 0.6s ease-in-out;
-
-}
-main.contact {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  flex-wrap: wrap; /* so on small screens it stacks */
-}
-
-main.contact > section {
-  flex: 1 1 45%;
-  min-width: 300px;
 }
 
 nav {
@@ -182,7 +170,28 @@ form button {
   margin-bottom: 10px;
 }
 
-/* Contact Form */
+/* Contact Page Layout */
+main.contact {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.contact-form {
+  flex: 1 1 50%;
+  order: 1;
+  min-width: 300px;
+}
+
+.about-info {
+  flex: 1 1 50%;
+  order: 2;
+  min-width: 300px;
+}
+
+/* Contact Form Styling */
 form {
   max-width: 500px;
   margin-top: 20px;
@@ -312,5 +321,15 @@ footer {
     content: "";
     display: block;
     clear: none;
+  }
+
+  main.contact {
+    flex-direction: column;
+  }
+
+  .contact-form,
+  .about-info {
+    width: 100%;
+    order: unset;
   }
 }
